@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## Предисловие
+Ну, что. Вот я и потрогал **React** в рамках одного весьма обильного курса, а вместе с ним и **Webpack**. С дизайном, конечно, особо не заморачивался, ибо цель была именно помацать **React** за все его непотребные места, а не делать какой-то **pet-project**. Концепция *single-page application*, в принципе, понравилась. <br/>
+Заодно поизучал немного **Webpack** уже самостоятельно, отдельно от курса. В принципе, суть бандлов уловил, но насколько же это обширный инструмент. Настраивать **Webpack** самостоятельно пока что звучит весьма тяжко, ибо нужно оптимизировать приложение, делать асинхронные подгрузки чанков и lazy loading. В ходе обучения смысла заниматься этим пока что не вижу, но т.к. столкнуться придется, потихоньку углубляюсь. В этом плане хочу выразить **ОГРОМНУЮ БЛАГОДАРНОСТЬ БОРОДАТЫМ ДЯДЯМ-РАЗРАБОТЧИКАМ REACT** за то что сделали **CRA** для маленьких и тупых, который сам настраивает **Webpack**.
+***
+Ниже вся инфа о использованных библиотеках и проделанной работе.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Стартуем
+Приложение запускается командой `npm start` на 3000 порте, остальная информация есть есть в *package.json*.
 
-## Available Scripts
+## Библиотеки
+- [axios](https://axios-http.com/);
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start).
 
-In the project directory, you can run:
+## REST API
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Чему я научился
+- Изучил хуки **useState**, **useRef**, **useEffect**, **useMemo**, **useContext** <br/>
+```
+По хукам пока что все понятно.
+useRef пока что не вижу смысла юзать, ибо он полезен для работы с неуправляемыми компонентами.
+Понимание useMemo и useContext пока что далеко от идеала.
+Хотелось бы поработать с остальными хуками на практике. 
+```
+- Сделал кастомные хуки для проекта на основе базовых react-хуков
+- Попробовал делать компоненты в ООП-шном стиле с классами и конструкторами <br/>
+```
+Лично мне не так удобно, хоть я и пришел из C#. Описывать компоненты функциями намного проще.
+Также мне объяснили, что данный подход устарел, и столкнуться с ним возможно только на старых проектах.
+```
+- Научился изолировать стили для react-компонентов с помощью файлов module.css
+- Сделал свою UI библиотеку компонентов
+- Приучил себя делать декомпозицию кода
+- Научился передавать состояние через пропсы (сверху вниз) и через колбеки (снизу вверх) <br/>
+```
+На этом моменте я уже начал понимать зачем нужен Redux, потому через пару проектов планирую начать его изучать.
+```
+- Сделал модальное окно
+- Сделал отрисовку компонентов по условию и простенький loader
+- Сделал сортировку и поиск по контенту
+- Сделал пагинацию, как на форумах
+- Сделал бесконечную ленту, как в социальных сетях
+- Сделал свой API
+```
+Потренеровал работу с сервером.
+Немного пощупал парсинг JSON.
+Заодно поработал с регулярными выражениями (regExp), которые мне тяжело даются.
+```
+- Научился делать роутинг / навигацию по страницам
+```
+Как на зло, курс свежий, а React Router уже обновился до 5 версии,
+пришлось самостоятельно несколько часов штудировать документацию.
+```
+- Сделал подобие авторизации, потрогал глобальное хранилище.
+## Итоги
+Что могу сказать. Была проделана работа просто коллосальных объемов. Приложение на продакшн, разумеется, не претендует, но ближайшее время будет для меня некой шпоргалкой, заглянув в которую, я смогу на живом примере повторить всё самое необходимое. Дальше постараюсь сделать простенький pet-project, чтобы закрепить полученную информацию уже без знающего свое дело диктора на фоне. Скорее всего буду делать ToDo List, ну хоть не калькулятор. Амбиции пока что прут, надеюсь, что получится полноценное приложение, а не огрызок функционала.
